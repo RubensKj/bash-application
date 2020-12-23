@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
@@ -39,11 +41,16 @@ public class teste {
         }
         builder.directory(new File(homeDirectory));
         Process process = builder.start();
-        StreamGoobler streamGobbler =
-                new StreamGoobler(process.getInputStream(), System.out::println);
 
-        Executors.newSingleThreadExecutor().submit(streamGobbler);
-        int exitCode = process.waitFor();
-        assert exitCode == 0;
+        List<String> collect = new BufferedReader(new InputStreamReader(process.getInputStream())).lines().collect(Collectors.toList());
+
+        LOGGER.info(String.valueOf(Arrays.stream(Arrays.stream(collect.toArray()).toArray()).toArray()));
+
+//        StreamGoobler streamGobbler =
+//                new StreamGoobler(process.getInputStream(), System.out::println);
+//
+//        Executors.newSingleThreadExecutor().submit(streamGobbler);
+//        int exitCode = process.waitFor();
+//        assert exitCode == 0;
     }
 }

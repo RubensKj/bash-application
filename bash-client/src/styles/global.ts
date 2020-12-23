@@ -14,7 +14,7 @@ export default createGlobalStyle`
 
   body {
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: #fff;
     color: #333;
 
@@ -26,7 +26,14 @@ export default createGlobalStyle`
   }
   button {
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased !important;
+  }
+
+  :root {
+    --color-info-user: #d5d5d5;
+    --color-text-bash: #d4d4d4;
+    --font-size-bash: 18px;
+    --space-between-info: 8px;
   }
 `;

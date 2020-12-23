@@ -38,4 +38,13 @@ public class BashDTO {
     public void setSession(SessionDTO session) {
         this.session = session;
     }
+
+    @Override
+    public String toString() {
+        return "BashDTO{" +
+                "homeDirectory='" + homeDirectory + '\'' +
+                ", command='" + command + '\'' +
+                ", session=" + session +
+                '}';
+    }
 }

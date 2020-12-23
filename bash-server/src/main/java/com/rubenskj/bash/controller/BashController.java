@@ -1,6 +1,7 @@
 package com.rubenskj.bash.controller;
 
 import com.rubenskj.bash.dto.BashDTO;
+import com.rubenskj.bash.dto.LineDTO;
 import com.rubenskj.bash.service.BashService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class BashController {
     }
 
     @PostMapping("/system")
-    public List<String> writeInBashSystem(@RequestBody BashDTO bashDTO) throws IOException {
+    public List<LineDTO> writeInBashSystem(@RequestBody BashDTO bashDTO) throws IOException, InterruptedException {
         return this.bashService.executeCommand(bashDTO);
     }
 }
