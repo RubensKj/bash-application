@@ -31,7 +31,7 @@ public class BashService {
             builder.command("sh", "-c", bashDTO.getCommand());
         }
 
-        builder.directory(new File(bashDTO.getHomeDirectory()));
+        builder.directory(new File(bashDTO.getHomeDirectory().trim()));
 
         Process process;
 
