@@ -37,7 +37,7 @@ const Bash: React.FC = () => {
       return;
     }
 
-    if (command.includes('cd')) {
+    if (command.includes('cd ')) {
       setHomeDirectory(command.trim().replace('cd', ''));
       handleClearForm();
       return;
