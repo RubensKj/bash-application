@@ -43,6 +43,7 @@ const Bash: React.FC = () => {
       return;
     }
 
+    // Should validate if it is windows or linux
     if (command === 'cls' || command === 'clear') {
       setLines([]);
       handleClearForm();
