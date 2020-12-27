@@ -63,6 +63,8 @@ const Bash: React.FC = () => {
       console.error('Error during the send of command');
       console.error(err);
 
+      alert(err);
+
       handleClearForm();
     });
 
