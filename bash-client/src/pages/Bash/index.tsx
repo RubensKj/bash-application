@@ -70,6 +70,7 @@ const Bash: React.FC = () => {
 
   }
 
+  // Create a fuction that set the form focus but not go to the divRef
   function handleClearForm() {
     formRef.current?.reset();
     formRef.current?.focus();
